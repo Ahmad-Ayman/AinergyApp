@@ -1,0 +1,6 @@
+package com.maslaha.maslahaapp.maslaha
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}

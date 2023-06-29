@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
+
+import 'package:go_router/go_router.dart';
 import 'package:maslaha/otp_screen.dart';
 
 import 'login_with_email.dart';
@@ -23,15 +24,16 @@ class ResetPasswordScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 GestureDetector(
                   onTap: () {
-                    Get.back();
+
+                    context.pop();
                   },
                   child: Row(
-                    children: [
+                    children: const [
                       Icon(
                         Icons.arrow_back_outlined,
                         color: Color(0xFF617C94),
@@ -47,21 +49,21 @@ class ResetPasswordScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 90,
                 ),
-                Text(
+                const Text(
                   'Reset Password',
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 25,
                       fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 40.0),
                   child: Text(
                     'Okey It’s Easy\nJust Send Your Number',
                     textAlign: TextAlign.center,
@@ -71,26 +73,26 @@ class ResetPasswordScreen extends StatelessWidget {
                         fontWeight: FontWeight.normal),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 32,
                 ),
                 Container(
                     width: MediaQuery.of(context).size.width,
-                    color: Color(0xFFF5FAFF),
+                    color: const Color(0xFFF5FAFF),
                     child: TextFormField(
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       textAlign: TextAlign.start,
                       validator: (value) {},
                       obscureText: false,
                       keyboardType: TextInputType.phone,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         contentPadding: EdgeInsets.symmetric(
                             vertical: 12.0, horizontal: 10),
                         border: OutlineInputBorder(),
                         hintText: 'Email',
                       ),
                     )),
-                SizedBox(
+                const SizedBox(
                   height: 24,
                 ),
                 SizedBox(
@@ -100,30 +102,30 @@ class ResetPasswordScreen extends StatelessWidget {
                     style: ButtonStyle(
                       // padding: MaterialStateProperty.all(EdgeInsets.all(20)),
                       backgroundColor:
-                      MaterialStateProperty.all(Color(0xFFFF8B3E)),
+                      MaterialStateProperty.all(const Color(0xFFFF8B3E)),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(23.0),
                           )),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Reset',
                       style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
                     onPressed: () {
-                      Get.to(NewPasswordScreen());
+                      context.goNamed('NewPass');
                     },
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
-                Text(
+                const Text(
                   'OR',
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Color(0xFF617C94)),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 SizedBox(
@@ -133,19 +135,19 @@ class ResetPasswordScreen extends StatelessWidget {
                     style: ButtonStyle(
                       // padding: MaterialStateProperty.all(EdgeInsets.all(20)),
                       backgroundColor:
-                      MaterialStateProperty.all(Color(0xFFFEF2EB)),
+                      MaterialStateProperty.all(const Color(0xFFFEF2EB)),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
-                            side: BorderSide(color: Color(0xFFFF833E)),
+                            side: const BorderSide(color: Color(0xFFFF833E)),
                             borderRadius: BorderRadius.circular(23.0),
                           )),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Login With Email and Password',
                       style: TextStyle(color: Color(0xFFFF833E), fontSize: 16),
                     ),
                     onPressed: () {
-                      Get.off(LoginWithEmailScreen());
+                     context.goNamed('LoginEmail');
                     },
                   ),
                 )
